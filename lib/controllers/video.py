@@ -3,6 +3,7 @@ from pathlib import Path
 from lib.entities.frame import Frame
 from lib.entities.video import Video
 from os import system, name
+import signal
 
 class VideoController:
 
@@ -14,6 +15,7 @@ class VideoController:
 
     def __start(self, video_path):
         video = Video(video_path, Frame)
+        signal.signal(signal.SIGINT, video.stop)
         for frame in video.play():
             self.__clear()
             print(frame, end='')
