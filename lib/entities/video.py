@@ -8,17 +8,19 @@ class Video:
     def __init__(self, path, drawer):
         self.video = cv2.VideoCapture(path)
         self.drawer = drawer
-        try:
-            self.size = os.get_terminal_size().columns
-        except:
-            self.size = 120
         self.fps = int(self.video.get(cv2.CAP_PROP_FPS))
         self.running = True
         self.stop_tries = 0
 
+    def __get_size(self):
+        try:
+            return os.get_terminal_size().columns
+        except:
+            return 120
+
 
     def __render_frame(self, image):
-        frame = self.drawer(image, self.size)
+        frame = self.drawer(image, self.__get_size())
         return frame.render()
     
     def stop(self):
