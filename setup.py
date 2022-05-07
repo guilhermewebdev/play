@@ -18,6 +18,5 @@ setup(
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
     url='https://www.python.org/sigs/distutils-sig/',
-    packages=['play'],
     install_requires=install_requires,
 )
