@@ -1,5 +1,5 @@
-from pathlib import Path
 import cv2
+import time
 
 class Video: 
 
@@ -7,6 +7,8 @@ class Video:
         self.video = cv2.VideoCapture(path)
         self.drawer = drawer
         self.size = size
+        self.fps = int(self.video.get(cv2.CAP_PROP_FPS))
+
 
     def __render_frame(self, image):
         frame = self.drawer(image, self.size)
@@ -23,5 +25,6 @@ class Video:
                     break
             else:
                 break
+            time.sleep(1 / self.fps)
         self.video.release()
         cv2.destroyAllWindows()

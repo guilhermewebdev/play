@@ -1,6 +1,6 @@
 import sys
 
-from src.controllers.video import VideoController
+from controllers.video import VideoController
 
 
 def play():
