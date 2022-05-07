@@ -1,6 +1,6 @@
 import sys
 
-from controllers.video import VideoController
+from lib.controllers.video import VideoController
 
 
 def play():

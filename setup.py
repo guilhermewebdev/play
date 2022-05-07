@@ -2,10 +2,12 @@
 
 from distutils.core import setup
 from importlib.metadata import entry_points
-import pathlib
+from pathlib import Path
 import pkg_resources
 
-with pathlib.Path('requirements.txt').open() as requirements_txt:
+requirements_path = Path(__file__).parent / "requirements.txt"
+
+with requirements_path.open() as requirements_txt:
     install_requires = [
         str(requirement)
         for requirement
@@ -18,10 +20,10 @@ setup(
     description='Play video in terminal',
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
-    url='https://www.python.org/sigs/distutils-sig/',
+    url='https://github.com/guilhermewebdev/play',
     install_requires=install_requires,
-    packages=['src', 'src.cli', 'src.entities', 'src.controllers'],
+    packages=['lib', 'lib.cli', 'lib.entities', 'lib.controllers'],
     entry_points={
-        'console_scripts': ['play=src.cli:play']
+        'console_scripts': ['play=lib.cli:play']
     }
 )

@@ -1,4 +1,4 @@
-from src.controllers.video import VideoController
+from lib.controllers.video import VideoController
 
 
 def test_video():

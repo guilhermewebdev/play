@@ -1,4 +1,4 @@
-from src.entities.video import Video
+from lib.entities.video import Video
 
 def test_video():
     class TestRender:
@@ -12,7 +12,7 @@ def test_video():
             TestRender.counter += 1
             return f"{TestRender.counter}"
 
-    video = Video("fake/frame.png", 120, TestRender)
+    video = Video("fake/frame.png", TestRender)
     counter_2 = 0
     for frame in video.play():
         if(frame): counter_2 += 1

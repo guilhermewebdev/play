@@ -1,12 +1,16 @@
 import cv2
 import time
+import os
 
 class Video: 
 
-    def __init__(self, path, size, drawer):
+    def __init__(self, path, drawer):
         self.video = cv2.VideoCapture(path)
         self.drawer = drawer
-        self.size = size
+        try:
+            self.size = os.get_terminal_size().columns
+        except:
+            self.size = 120
         self.fps = int(self.video.get(cv2.CAP_PROP_FPS))
 
 

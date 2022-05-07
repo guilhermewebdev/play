@@ -1,18 +1,21 @@
 from pathlib import Path
 
-from entities.frame import Frame
-from entities.video import Video
-import os
+from lib.entities.frame import Frame
+from lib.entities.video import Video
+from os import system, name
 
 class VideoController:
 
-    def __init__(self, size=120):
-        self.size = size
+    def __clear(self):
+        if name == 'nt':
+            system('cls')
+        else:
+            system('clear')
 
     def __start(self, video_path):
-        video = Video(video_path, self.size, Frame)
+        video = Video(video_path, Frame)
         for frame in video.play():
-            os.system('clear')
+            self.__clear()
             print(frame, end='')
 
     def play(self, path):
