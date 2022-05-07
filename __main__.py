@@ -1,3 +1,3 @@
 if __name__ == '__main__':
-    from cli import play
+    from lib.cli import play
     play()
