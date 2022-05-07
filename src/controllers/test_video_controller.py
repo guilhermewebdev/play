@@ -1,2 +1,6 @@
+from controllers.video import VideoController
+
+
 def test_video():
-    pass
+    controller = VideoController()
+    controller.play("fake/frame.png")

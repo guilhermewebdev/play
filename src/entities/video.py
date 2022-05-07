@@ -3,12 +3,13 @@ import cv2
 
 class Video: 
 
-    def __init__(self, path, drawer):
+    def __init__(self, path, size, drawer):
         self.video = cv2.VideoCapture(path)
         self.drawer = drawer
+        self.size = size
 
     def __render_frame(self, image):
-        frame = self.drawer(image)
+        frame = self.drawer(image, self.size)
         frame.render()
 
     def play(self):
