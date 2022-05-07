@@ -1,7 +1,7 @@
 from PIL import Image
 
 class Frame:
-    chars = ["B","S","#","&","@","$","%","*","!",":","."]
+    chars = ["B", "S", "#", "&", "@", "$", "%", "*", "!", ":", ".", " "]
     
     def __init__(self, frame, size):
         self.frame = frame
@@ -15,11 +15,11 @@ class Frame:
         self.pixels = self.image.getdata()
 
     def generate_image(self):
-        new_pixels = [self.chars[pixel//25] for pixel in self.pixels]
+        new_pixels = [self.chars[pixel//23] for pixel in self.pixels]
         new_pixels = ''.join(new_pixels)
         new_pixels_count = len(new_pixels)
-        ascii_image = [new_pixels[
-            index:index + self.size] for index in range(0, new_pixels_count, self.size)
+        ascii_image = [
+            new_pixels[index:index + self.size] for index in range(0, new_pixels_count, self.size)
         ]
         ascii_image = "\n".join(ascii_image)
         return ascii_image
