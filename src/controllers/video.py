@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from entities.frame import Frame
-from entities.video import Video
+from src.entities.frame import Frame
+from src.entities.video import Video
 
 class VideoController:
 
@@ -10,7 +10,8 @@ class VideoController:
 
     def __start(self, video_path):
         video = Video(video_path, self.size, Frame)
-        video.play()
+        for frame in video.play():
+            print(frame, end='')
 
     def play(self, path):
         video = Path(path)

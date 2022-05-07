@@ -1,4 +1,4 @@
-from video import Video
+from src.entities.video import Video
 
 def test_video():
     class TestRender:
@@ -10,7 +10,11 @@ def test_video():
 
         def render(self):
             TestRender.counter += 1
+            return f"{TestRender.counter}"
 
     video = Video("fake/frame.png", 120, TestRender)
-    assert video.play()
+    counter_2 = 0
+    for frame in video.play():
+        if(frame): counter_2 += 1
+    assert counter_2 == 1
     assert TestRender.counter == 1

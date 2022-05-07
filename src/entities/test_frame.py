@@ -1,5 +1,5 @@
 import cv2
-from frame import Frame
+from src.entities.frame import Frame
 
 
 def render_frame(image):

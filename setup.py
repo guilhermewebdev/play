@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from distutils.core import setup
+from importlib.metadata import entry_points
 import pathlib
 import pkg_resources
 
@@ -19,4 +20,8 @@ setup(
     author_email='guilherme@guilhermeweb.dev',
     url='https://www.python.org/sigs/distutils-sig/',
     install_requires=install_requires,
+    packages=['src', 'src.cli', 'src.entities', 'src.controllers'],
+    entry_points={
+        'console_scripts': ['play=src.cli:play']
+    }
 )

@@ -26,4 +26,4 @@ class Frame:
 
     def render(self):
         rendered = self.generate_image()
-        print(rendered)
+        return rendered
