@@ -2,6 +2,10 @@
 
 from distutils.core import setup
 import setuptools
+from pathlib import Path
+
+this_directory = Path(__file__).parent
+long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='play-video',
@@ -10,6 +14,8 @@ setup(
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
     url='https://github.com/guilhermewebdev/play',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     description_file='README.md',
     license='GNU General Public License v3.0',
     platforms=['Linux', 'MacOS', 'Windows'],
