@@ -19,4 +19,4 @@ Example:
 
 The video https://www.youtube.com/watch?v=u_jJkkxeE30 will be reproduced as:
 
-![Screen Gif](assets/screen-gif.gif)
+![Screen Gif](https://github.com/guilhermewebdev/play/blob/master/assets/screen-gif.gif?raw=True)
