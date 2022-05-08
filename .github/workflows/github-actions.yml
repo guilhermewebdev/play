@@ -28,3 +28,5 @@ jobs:
         run: tox
         env:
           PLATFORM: ${{ matrix.platform }}
+          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+
