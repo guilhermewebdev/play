@@ -1,0 +1,31 @@
+stages:
+- test
+- build
+- release
+
+.test:
+  stage: test
+  before_script:
+    - apt update
+    - apt install -y libgl1-mesa-glx
+    - pip install -r requirements-dev.txt
+
+python37:
+  extends: .test
+  image: python:3.7
+  script: tox -e py37
+
+python38:
+  extends: .test
+  image: python:3.8
+  script: tox -e py38
+
+python39:
+  extends: .test
+  image: python:3.9
+  script: tox -e py39
+
+python310:
+  extends: .test
+  image: python:3.10
+  script: tox -e py310

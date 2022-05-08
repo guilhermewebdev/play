@@ -1,15 +1,6 @@
 #!/usr/bin/env python3
 
 from distutils.core import setup
-import pathlib
-import pkg_resources
-
-with pathlib.Path('requirements.txt').open() as requirements_txt:
-    install_requires = [
-        str(requirement)
-        for requirement
-        in pkg_resources.parse_requirements(requirements_txt)
-    ]
 
 setup(
     name='Play',
@@ -17,6 +8,13 @@ setup(
     description='Play video in terminal',
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
-    url='https://www.python.org/sigs/distutils-sig/',
-    install_requires=install_requires,
+    url='https://github.com/guilhermewebdev/play',
+    install_requires=[
+        'opencv-python',
+        'Pillow',
+    ],
+    packages=['lib', 'lib.cli', 'lib.entities', 'lib.controllers'],
+    entry_points={
+        'console_scripts': ['play=lib.cli:play']
+    }
 )
