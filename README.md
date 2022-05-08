@@ -6,7 +6,7 @@ Play is a video player for the terminal. You can play videos from your computer 
 ## How to install?
 Play is a python package. You can install it with the following command:
 
-    $ pip install play
+    $ pip install play-video
 
 ## How to use it?
 Play uses a command line interface:
