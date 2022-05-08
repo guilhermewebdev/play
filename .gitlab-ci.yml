@@ -40,4 +40,4 @@ publish:
     - python3 -m build --sdist
     - twine upload dist/*
   only:
-    - tags
+    - master
