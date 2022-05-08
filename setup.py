@@ -4,7 +4,7 @@ from distutils.core import setup
 import setuptools
 
 setup(
-    name='Play',
+    name='play-video',
     version='0.1',
     description='Play video on terminal',
     author='Guilherme Isaías',
