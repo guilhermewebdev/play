@@ -9,7 +9,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='play-video',
-    version='1.0.5',
+    version='1.0.6',
     description='Play video on terminal',
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
