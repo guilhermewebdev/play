@@ -5,7 +5,7 @@ import setuptools
 
 setup(
     name='play-video',
-    version='0.1',
+    version='1.0.1',
     description='Play video on terminal',
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
