@@ -1,3 +1,2 @@
 opencv-python
 Pillow
-opencv-contirb-python

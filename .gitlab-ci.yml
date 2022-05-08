@@ -6,6 +6,8 @@ stages:
 .test:
   stage: test
   before_script:
+    - apt update
+    - apt install -y libgl1-mesa-glx
     - pip install -r requirements-dev.txt
 
 python37:
