@@ -1,6 +1,5 @@
 stages:
 - test
-- build
 - release
 
 .test:
@@ -29,3 +28,16 @@ python310:
   extends: .test
   image: python:3.10
   script: tox -e py310
+
+publish:
+  stage: release
+  image: python
+  before_script:
+    - apt update
+    - apt install -y libgl1-mesa-glx
+    - pip install -r requirements-dev.txt
+  script:
+    - python3 -m build --sdist
+    - twine upload dist/*
+  only:
+    - master

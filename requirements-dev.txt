@@ -1,3 +1,7 @@
 -rrequirements.txt
 tox
 pytest
+setuptools 
+wheel
+twine
+build
