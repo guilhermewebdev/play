@@ -6,7 +6,7 @@ import setuptools
 setup(
     name='Play',
     version='0.1',
-    description='Play video in terminal',
+    description='Play video on terminal',
     author='Guilherme Isaías',
     author_email='guilherme@guilhermeweb.dev',
     url='https://github.com/guilhermewebdev/play',
